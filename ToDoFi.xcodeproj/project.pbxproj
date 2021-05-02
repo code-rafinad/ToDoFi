@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		115A608A263F35FC00D55147 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115A6089263F35FC00D55147 /* Task.swift */; };
+		115A608C263F360600D55147 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115A608B263F360600D55147 /* User.swift */; };
 		11692D27263EF2C4006FB5C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11692D26263EF2C4006FB5C3 /* GoogleService-Info.plist */; };
 		1169CFCC263ECD68000091D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169CFCB263ECD68000091D0 /* AppDelegate.swift */; };
 		1169CFCE263ECD68000091D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169CFCD263ECD68000091D0 /* SceneDelegate.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		115A6089263F35FC00D55147 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		115A608B263F360600D55147 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		11692D26263EF2C4006FB5C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1169CFC8263ECD68000091D0 /* ToDoFi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoFi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1169CFCB263ECD68000091D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +50,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		115A608D263F361E00D55147 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				115A6089263F35FC00D55147 /* Task.swift */,
+				115A608B263F360600D55147 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1169CFBF263ECD68000091D0 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +80,7 @@
 		1169CFCA263ECD68000091D0 /* ToDoFi */ = {
 			isa = PBXGroup;
 			children = (
+				115A608D263F361E00D55147 /* Models */,
 				1169CFE2263EDE10000091D0 /* Controllers */,
 				1169CFE1263EDDF6000091D0 /* Supporting files */,
 			);
@@ -110,7 +124,6 @@
 				EA886D0079744635DB09CBA2 /* Pods-ToDoFi.debug.xcconfig */,
 				1B73C851A10F2D4755B536FC /* Pods-ToDoFi.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -231,6 +244,8 @@
 			files = (
 				1169CFD0263ECD68000091D0 /* LoginViewController.swift in Sources */,
 				1169CFE0263EDD9F000091D0 /* TasksViewController.swift in Sources */,
+				115A608C263F360600D55147 /* User.swift in Sources */,
+				115A608A263F35FC00D55147 /* Task.swift in Sources */,
 				1169CFCC263ECD68000091D0 /* AppDelegate.swift in Sources */,
 				1169CFCE263ECD68000091D0 /* SceneDelegate.swift in Sources */,
 			);
