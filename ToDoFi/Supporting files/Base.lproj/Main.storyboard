@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ToDoFi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +67,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="7GH-S6-ctF" kind="show" id="g0I-H3-php"/>
+                                                    <segue destination="7GH-S6-ctF" kind="show" identifier="tasksSegue" id="g0I-H3-php"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TH1-uK-pi6">
@@ -112,7 +112,7 @@
         <!--Tasks-->
         <scene sceneID="P2K-m8-hFQ">
             <objects>
-                <viewController id="uBd-Ux-FTh" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="uBd-Ux-FTh" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CaI-Dr-IH3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,11 +155,11 @@
         <!--Navigation Controller-->
         <scene sceneID="YSU-bI-WCL">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7GH-S6-ctF" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="7GH-S6-ctF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="VXH-Ck-LlN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ceo-Rp-lOV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
