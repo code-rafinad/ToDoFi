@@ -10,12 +10,15 @@ import Firebase
 
 class LoginViewController: UIViewController {
     let segueIdentifier = "tasksSegue"
+    var ref: DatabaseReference!
+    
     @IBOutlet weak var warnLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference(withPath: "users")
         warnLabel.alpha = 0
         Auth.auth().addStateDidChangeListener { [weak self] auth, user in
             if user != nil {
@@ -69,12 +72,13 @@ class LoginViewController: UIViewController {
             return
         }
             Auth.auth().createUser(withEmail: email, password: password, completion: { [weak self] (user,error) in
-        if error == nil {
-            print("created_user")
-            if user != nil {
-                self?.performSegue(withIdentifier: "tasksSegue", sender: nil)
-            }
-        }
+                
+                guard error == nil, user != nil else {
+                    print(error!.localizedDescription)
+                    return
+                }
+                let userRef = self?.ref.child((user?.user.uid)!)
+                userRef?.setValue(["email": user?.user.email])
         })
         
         
