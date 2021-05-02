@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 
 class LoginViewController: UIViewController {
+    let segueIdentifier = "tasksSegue"
     @IBOutlet weak var warnLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -16,9 +17,18 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         warnLabel.alpha = 0
+        Auth.auth().addStateDidChangeListener { [weak self] auth, user in
+            if user != nil {
+                self?.performSegue(withIdentifier: (self?.segueIdentifier)!, sender: nil)
+            }
+        }
     
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        passwordTextField.text = ""
+    }
     func kbDidShow(notification: Notification) {
         
     }
