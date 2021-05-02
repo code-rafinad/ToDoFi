@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="ToDoFi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,6 +67,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aJI-Mt-5WO"/>
                                                     <segue destination="7GH-S6-ctF" kind="show" identifier="tasksSegue" id="g0I-H3-php"/>
                                                 </connections>
                                             </button>
@@ -77,6 +78,9 @@
                                                 <state key="normal" title="Register">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="registerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v4r-c6-Mrl"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -104,6 +108,11 @@
                             <constraint firstItem="tTL-V4-Pfd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="b6q-pE-3aV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="b4m-Z7-ReV" id="WvS-uQ-lHz"/>
+                        <outlet property="passwordTextField" destination="b4m-Z7-ReV" id="DQh-xI-NkH"/>
+                        <outlet property="warnLabel" destination="IAN-wG-eha" id="duV-kG-sdn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -112,7 +121,7 @@
         <!--Tasks-->
         <scene sceneID="P2K-m8-hFQ">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="uBd-Ux-FTh" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="uBd-Ux-FTh" customClass="TasksViewController" customModule="ToDoFi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CaI-Dr-IH3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,6 +142,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="uBd-Ux-FTh" id="X1n-uc-z4i"/>
+                                    <outlet property="delegate" destination="uBd-Ux-FTh" id="2Eq-YY-6ji"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mrN-gI-heb"/>
@@ -145,8 +158,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="iXe-3A-16q">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="53Q-PZ-CJQ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="53Q-PZ-CJQ">
+                            <connections>
+                                <action selector="addTapped:" destination="uBd-Ux-FTh" id="v0v-6t-I44"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="6bd-QB-jiR" id="dMT-3y-O2T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EPL-7z-ZIG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
