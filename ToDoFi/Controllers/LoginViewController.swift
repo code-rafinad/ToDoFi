@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
                 self?.performSegue(withIdentifier: (self?.segueIdentifier)!, sender: nil)
             }
         }
-    
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
     func kbDidShow(notification: Notification) {
         
     }
-
+    
     func kbDidHide() {
         
     }
@@ -71,16 +71,15 @@ class LoginViewController: UIViewController {
             displayWarningLabel(withText: "Info is incorrect")
             return
         }
-            Auth.auth().createUser(withEmail: email, password: password, completion: { [weak self] (user,error) in
-                
-                guard error == nil, user != nil else {
-                    print(error!.localizedDescription)
-                    return
-                }
-                let userRef = self?.ref.child((user?.user.uid)!)
-                userRef?.setValue(["email": user?.user.email])
+        Auth.auth().createUser(withEmail: email, password: password, completion: { [weak self] (user,error) in
+            
+            guard error == nil, user != nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            let userRef = self?.ref.child((user?.user.uid)!)
+            userRef?.setValue(["email": user?.user.email])
         })
-        
         
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
